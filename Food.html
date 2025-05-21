@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McFood Ordering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-container">
+        <form id="login-form" class="auth-form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+            <p id="login-error" class="error"></p>
+        </form>
+        <form id="signup-form" class="auth-form hidden">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            <p id="signup-error" class="error"></p>
+        </form>
+    </div>
+    <div id="app-container" class="hidden">
+        <header>
+            <h1>McFood Ordering</h1>
+            <button id="logout-btn">Logout</button>
+        </header>
+        <main>
+            <section id="menu">
+                <h2>Menu</h2>
+                <div class="menu-grid" id="menu-list">
+                    <!-- Menu cards will be inserted here -->
+                </div>
+            </section>
+            <section id="cart">
+                <h2>Your Cart</h2>
+                <ul id="cart-list"></ul>
+                <p id="cart-total"></p>
+                <button id="order-btn" class="hidden">Place Order</button>
+            </section>
+            <section id="order-confirmation" class="hidden">
+                <h2>Order Confirmed!</h2>
+                <p>Your food is on the way.</p>
+            </section>
+            <section id="order-tracking" class="hidden"></section>
+        </main>
+    </div>
+    <!-- Modal for customization -->
+    <div id="customize-modal" class="hidden" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:100;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;">
+        <div style="background:#fffde4;padding:26px 22px 18px 22px;border-radius:18px;min-width:260px;max-width:90vw;box-shadow:0 4px 18px #ffd60044;position:relative;">
+            <h2 style="color:#ffa000;font-size:1.18em;margin-bottom:14px;">Customize</h2>
+            <form id="customize-form">
+                <label style="display:block;margin-bottom:8px;">
+                    <input type="checkbox" id="extra-cheese" /> Extra Cheese
+                </label>
+                <label style="display:block;margin-bottom:8px;">
+                    <input type="checkbox" id="no-onion" /> No Onion
+                </label>
+                <label style="display:block;margin-bottom:18px;">
+                    <input type="checkbox" id="spicy" /> Make it Spicy
+                </label>
+                <div style="display:flex;gap:8px;justify-content:flex-end;">
+                    <button type="button" id="cancel-customize" style="background:#ffe082;color:#a7a095;width:80px;">Cancel</button>
+                    <button type="submit" style="width:80px;">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

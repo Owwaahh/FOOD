@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #fffbe7 0%, #fff3e0 100%);
+    color: #2d2d2d;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+#auth-container, #app-container {
+    max-width: 430px;
+    margin: 40px auto 0 auto;
+    background: rgba(255,255,255,0.96);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 18px 30px 18px;
+    border: 1px solid #ffe082;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 0;
+    color: #fbc02d;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.19em; }
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+input[type="text"], input[type="password"] {
+    padding: 13px;
+    border-radius: 8px;
+    border: 1.5px solid #ffe082;
+    font-size: 1.08em;
+    background: #fffde4;
+    margin-top: 2px;
+    transition: border 0.2s;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    border: 1.5px solid #fbc02d;
+    outline: none;
+    background: #fffde4;
+}
+button {
+    padding: 12px 0;
+    background: linear-gradient(90deg, #ffd600 30%, #ffa000 100%);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    font-size: 1em;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(251,192,45,0.09);
+    letter-spacing: 1px;
+}
+button:hover {
+    background: linear-gradient(90deg, #ffa000 30%, #ffd600 100%);
+    color: #fffbe7;
+}
+a {
+    color: #fbc02d;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+.hidden {
+    display: none !important;
+}
+
+#menu {
+    margin-bottom: 28px;
+}
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.menu-card {
+    background: #fffef7;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #ffe08244;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px;
+    position: relative;
+    border: 1.5px solid #ffe082;
+    transition: box-shadow 0.18s, border 0.18s;
+}
+.menu-card:hover {
+    box-shadow: 0 6px 12px #ffd60033;
+    border: 1.5px solid #ffd600;
+}
+.menu-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ffe082;
+    background: #fff9c4;
+}
+.menu-card .item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.08em;
+    font-weight: 600;
+    color: #e65100;
+    margin-bottom: 3px;
+}
+.menu-card .item-price {
+    font-size: 1em;
+    color: #816e2f;
+    margin-bottom: 8px;
+}
+.menu-card button {
+    width: 100%;
+    margin-top: 4px;
+    background: linear-gradient(90deg, #ffd600 60%, #ffa000 100%);
+    color: #fff;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 6px 0;
+    box-shadow: none;
+}
+.menu-card button:hover {
+    background: linear-gradient(90deg, #ffa000 40%, #ffd600 100%);
+}
+
+#cart {
+    margin-bottom: 24px;
+}
+#cart-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#cart-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    border-bottom: 1.5px solid #ffe082;
+    font-size: 1.08em;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+#cart-list li:last-child {
+    border-bottom: none;
+}
+#cart-list button {
+    background: linear-gradient(90deg, #fff8e1 0%, #ffe082 100%);
+    color: #c49000;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 13px;
+    font-size: 0.96em;
+    font-family: inherit;
+    font-weight: 600;
+    margin-left: 12px;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+#cart-list button:hover {
+    background: linear-gradient(90deg, #ffd600 20%, #fffde4 100%);
+    color: #ffa000;
+}
+.error {
+    color: #d32f2f;
+    font-size: 1em;
+    min-height: 1.2em;
+    margin-top: -10px;
+    margin-bottom: -5px;
+}
+#cart-total {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 1.07em;
+    color: #ffa000;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+#order-btn {
+    margin-top: 16px;
+    width: 100%;
+    font-size: 1.12em;
+    background: linear-gradient(90deg, #ffd600 30%, #ffa000 100%);
+    color: #fffbe7;
+}
+#order-btn:hover {
+    background: linear-gradient(90deg, #ffa000 30%, #ffd600 100%);
+}
+#order-confirmation {
+    text-align: center;
+    padding: 24px 0;
+    color: #ffa000;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+#order-confirmation h2 {
+    color: #fbc02d;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+#order-confirmation p {
+    font-size: 1.1em;
+}
+#order-tracking {
+    background: #fffde4;
+    border-radius: 14px;
+    padding: 18px 12px;
+    margin-top: 8px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    border: 1.5px solid #ffe082;
+}
+#order-tracking h2 {
+    color: #ffa000;
+    font-size: 1.18em;
+    margin-bottom: 10px;
+}
+#order-tracking ol {
+    padding-left: 1em;
+    margin: 0 0 10px 0;
+}
+#order-tracking li {
+    margin: 0.6em 0;
+    transition: color 0.2s, font-weight 0.2s;
+}
+#order-tracking li.current {
+    color: #fbc02d !important;
+    font-weight: bold;
+    font-size: 1.09em;
+}
+#order-tracking li.done {
+    color: #ffa000 !important;
+}
+#order-tracking li.upcoming {
+    color: #a7a095 !important;
+}
+#order-tracking p {
+    color: #fbc02d;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    #auth-container, #app-container {
+        max-width: 99vw;
+        padding: 8px 0 14px 0;
+    }
+    header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
